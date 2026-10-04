@@ -168,6 +168,29 @@ h2 {
 	object-position: center 30%;
 }
 
+/* A second, smaller portrait in the corner of the main picture */
+.card-art-wrap {
+	position: relative;
+}
+
+.card-art-wrap .card-art {
+	display: block;
+}
+
+.inset {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	width: 32%;
+	height: auto;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 4px solid var(--card);
+	box-shadow: var(--shadow);
+	object-fit: cover;
+	object-position: center 35%;
+}
+
 .card-art.space {
 	object-position: center 65%;
 }
