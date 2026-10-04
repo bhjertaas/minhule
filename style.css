@@ -1,0 +1,254 @@
+:root {
+	--sand: #fdf3e1;
+	--sand-2: #f8e4c3;
+	--ink: #23324a;
+	--muted: #5b6b80;
+	--turquoise: #14b8a6;
+	--lagoon: #0e7c86;
+	--sunset: #ff8a3d;
+	--coral: #ff6b6b;
+	--pink: #ff8fab;
+	--card: #ffffff;
+	--shadow: 0 10px 30px rgb(14 124 134 / 0.15);
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--sand: #0b1f2e;
+		--sand-2: #10293b;
+		--ink: #f3ecdf;
+		--muted: #a9bccb;
+		--turquoise: #2dd4bf;
+		--lagoon: #5eead4;
+		--card: #13314a;
+		--shadow: 0 10px 30px rgb(0 0 0 / 0.35);
+		color-scheme: dark;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	background: var(--sand);
+	color: var(--ink);
+	font-family: 'Nunito', system-ui, sans-serif;
+	line-height: 1.55;
+	font-size: 18px;
+}
+
+a {
+	color: var(--lagoon);
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+.hero {
+	position: relative;
+	min-height: min(78vh, 720px);
+	display: flex;
+	align-items: flex-end;
+	overflow: hidden;
+	background: linear-gradient(180deg, #ff8fab, #ff8a3d 60%, #ffd166);
+}
+
+.hero-img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 30% 60%;
+}
+
+.hero::after {
+	/* Sunset glow so the title stays readable over the picture */
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, transparent 35%, rgb(35 50 74 / 0.55) 100%);
+}
+
+.hero-text {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 0 16px 120px;
+	color: #fffaf0;
+	text-shadow: 0 2px 12px rgb(0 0 0 / 0.35);
+}
+
+h1 {
+	font-family: 'Fredoka', system-ui, sans-serif;
+	font-size: clamp(3.2rem, 12vw, 6.5rem);
+	line-height: 1;
+	margin: 0;
+	letter-spacing: -0.02em;
+}
+
+h1 span {
+	color: #7ff3e3;
+}
+
+.tagline {
+	font-family: 'Fredoka', system-ui, sans-serif;
+	font-size: clamp(1.3rem, 4vw, 1.9rem);
+	margin: 0.3rem 0 0.4rem;
+}
+
+.small {
+	font-size: 0.9rem;
+	opacity: 0.85;
+	margin: 0;
+}
+
+.wave {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 90px;
+	z-index: 1;
+	fill: var(--sand);
+}
+
+/* ── Apps ─────────────────────────────────────────────── */
+main {
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 1rem 16px 3rem;
+}
+
+h2 {
+	font-family: 'Fredoka', system-ui, sans-serif;
+	font-size: 2rem;
+	margin: 0.5rem 0 1.25rem;
+	color: var(--lagoon);
+}
+
+.apps {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+.card {
+	background: var(--card);
+	border-radius: 28px;
+	box-shadow: var(--shadow);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	border: 3px solid transparent;
+	transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+	transform: translateY(-4px) rotate(-0.5deg);
+	border-color: var(--turquoise);
+}
+
+.card-art {
+	width: 100%;
+	height: auto; /* the img height attribute would otherwise win over aspect-ratio */
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	background: var(--sand-2);
+}
+
+.card-art.round {
+	object-position: center 30%;
+}
+
+.card-body {
+	padding: 1.25rem 1.5rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	flex: 1;
+}
+
+.card-body p {
+	margin: 0;
+}
+
+h3 {
+	font-family: 'Fredoka', system-ui, sans-serif;
+	font-size: 1.8rem;
+	margin: 0;
+	line-height: 1.1;
+}
+
+h3 .go {
+	color: var(--sunset);
+}
+
+.button {
+	align-self: flex-start;
+	margin-top: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	min-height: 48px;
+	padding: 0.6rem 1.4rem;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--turquoise), var(--lagoon));
+	color: #ffffff;
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: 0 6px 16px rgb(20 184 166 / 0.35);
+}
+
+.button:hover {
+	background: linear-gradient(135deg, var(--sunset), var(--coral));
+	box-shadow: 0 6px 16px rgb(255 107 107 / 0.35);
+}
+
+.button:focus-visible,
+a:focus-visible {
+	outline: 3px solid var(--sunset);
+	outline-offset: 3px;
+}
+
+.pill {
+	align-self: flex-start;
+	margin-top: auto;
+	padding: 0.3rem 0.9rem;
+	border-radius: 999px;
+	background: var(--sand-2);
+	color: var(--muted);
+	font-weight: 700;
+	font-size: 0.85rem;
+}
+
+.soon .card-body p {
+	color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.bob {
+		animation: bob 6s ease-in-out infinite;
+	}
+}
+
+@keyframes bob {
+	50% {
+		transform: translateY(-6px) rotate(0.6deg);
+	}
+}
+
+footer {
+	text-align: center;
+	padding: 2rem 16px 3rem;
+	color: var(--muted);
+	font-size: 0.95rem;
+	background: linear-gradient(180deg, var(--sand), var(--sand-2));
+}
