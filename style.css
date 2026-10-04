@@ -168,6 +168,10 @@ h2 {
 	object-position: center 30%;
 }
 
+.card-art.space {
+	object-position: center 65%;
+}
+
 .card-body {
 	padding: 1.25rem 1.5rem 1.5rem;
 	display: flex;
@@ -189,6 +193,10 @@ h3 {
 
 h3 .go {
 	color: var(--sunset);
+}
+
+h3 .stream {
+	color: #c47a12;
 }
 
 .button {
