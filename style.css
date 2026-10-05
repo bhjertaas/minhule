@@ -251,15 +251,13 @@ a:focus-visible {
 
 /* Fold-out tech notes under a card's description */
 .tech {
-	font-size: 0.9rem;
 	color: var(--muted);
 }
 
 .tech summary {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	gap: 0.5rem;
+	gap: 0.6rem;
 	min-height: 32px;
 	cursor: pointer;
 	list-style: none;
@@ -274,7 +272,6 @@ a:focus-visible {
 	flex: none;
 	width: 0.5em;
 	height: 0.5em;
-	margin-right: 0.25em;
 	border-right: 2px solid currentColor;
 	border-bottom: 2px solid currentColor;
 	transform: translateY(-25%) rotate(45deg);
