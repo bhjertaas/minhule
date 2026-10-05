@@ -11,6 +11,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="style.css" />
+	<!-- Cookieless visitor counts: https://minhule.goatcounter.com -->
+	<script data-goatcounter="https://minhule.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 	<header class="hero">
@@ -36,11 +38,11 @@
 				<div class="card-body">
 					<h3>lan<span class="go">Go</span></h3>
 					<p>Learn to <strong>speak</strong> Spanish and French, a few minutes at a time. Listen, build sentences and chat with Lucía from Madrid and Alain from Lyon.</p>
-					<details class="tech small">
+					<details class="tech small" data-count="tech-lango">
 						<summary>For family &amp; friends · invitation only</summary>
 						<p>SvelteKit 3 PWA with a Postgres database. Hosted as serverless containers. Uses the Claude and Mistral APIs at runtime.</p>
 					</details>
-					<a class="button" href="https://lango.minhule.eu">Open lanGo <span aria-hidden="true">→</span></a>
+					<a class="button" href="https://lango.minhule.eu" data-goatcounter-click="open-lango">Open lanGo <span aria-hidden="true">→</span></a>
 				</div>
 			</li>
 			<li class="card">
@@ -48,11 +50,11 @@
 				<div class="card-body">
 					<h3>inter<span class="stream">stream</span></h3>
 					<p>An Android IPTV player. Browse your channels, movies and series, and cast them to the big screen. <small>Only legal content accepted</small></p>
-					<details class="tech small">
+					<details class="tech small" data-count="tech-interstream">
 						<summary>App v1.1 · password-protected download, ask Benny</summary>
 						<p>Native Android app built with Kotlin. Media3/ExoPlayer for video. Snappy and simple to use, without the bloat.</p>
 					</details>
-					<a class="button" href="https://drive.proton.me/urls/QN76DDJ6VR#LB5L4QwqXmPV" rel="noopener">Download APK <span aria-hidden="true">↓</span></a>
+					<a class="button" href="https://drive.proton.me/urls/QN76DDJ6VR#LB5L4QwqXmPV" rel="noopener" data-goatcounter-click="download-interstream">Download APK <span aria-hidden="true">↓</span></a>
 				</div>
 			</li>
 			<li class="card soon">
@@ -70,5 +72,13 @@
 		<p>Made with <span aria-label="love">❤️</span> in a cosy cave · <a href="https://minhule.eu">minhule.eu</a></p>
 		<p>My name is Benny Hjertaas. I am a software developer, working at <a href="https://www.ring.no">Ring</a> Digital, Stavanger.</p>
 	</footer>
+	<script>
+		// Count each time a tech note is opened (GoatCounter only counts links by itself)
+		for (const d of document.querySelectorAll('details[data-count]')) {
+			d.addEventListener('toggle', () => {
+				if (d.open && window.goatcounter?.count) goatcounter.count({ path: d.dataset.count, event: true });
+			});
+		}
+	</script>
 </body>
 </html>
