@@ -249,6 +249,60 @@ a:focus-visible {
 	outline-offset: 3px;
 }
 
+/* Fold-out tech notes under a card's description */
+.tech {
+	font-size: 0.9rem;
+	color: var(--muted);
+}
+
+.tech summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	min-height: 32px;
+	cursor: pointer;
+	list-style: none;
+}
+
+.tech summary::-webkit-details-marker {
+	display: none;
+}
+
+.tech summary::after {
+	content: '';
+	flex: none;
+	width: 0.5em;
+	height: 0.5em;
+	margin-right: 0.25em;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: translateY(-25%) rotate(45deg);
+	transition: transform 0.2s ease;
+}
+
+.tech[open] summary::after {
+	transform: translateY(25%) rotate(-135deg);
+}
+
+.tech summary:hover {
+	color: var(--lagoon);
+}
+
+.tech summary:focus-visible {
+	outline: 3px solid var(--sunset);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+.tech p {
+	margin: 0.25rem 0 0;
+	padding: 0.6rem 0.8rem;
+	border-radius: 12px;
+	background: var(--sand-2);
+	color: var(--ink);
+}
+
 .pill {
 	align-self: flex-start;
 	margin-top: auto;
