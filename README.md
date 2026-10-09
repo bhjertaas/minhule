@@ -7,6 +7,7 @@ The landing page for [minhule.eu](https://minhule.eu): a little cave of apps. Pl
 - `404.html`: "Lost at sea".
 - `images/`: illustrations made with an image model (gpt-image-2); the lanGo portraits (Lucía, and Alain in the corner) come from the lanGo repository. `scripts/make-image.py <name>` regenerates `images/<name>.webp` from `scripts/prompts/<name>.txt`, using `OPENAI_API_KEY` from `.env` (git-ignored).
 - Visitor counts: [GoatCounter](https://minhule.goatcounter.com), cookieless. Button clicks are counted via `data-goatcounter-click`, and opened tech notes via `data-count` on the `<details>`.
+- `videos/`: the lanGo demo film (`lango-demo.mp4`, with `lango-demo.jpg` as its still), made in the lanGo repository with `pnpm demo:video`. The lanGo app plays it from here.
 - `CNAME`: the custom domain for GitHub Pages.
 
 To add an app, add a card to the `.apps` list in `index.html` (and optionally a short-link folder like `lango/`).
