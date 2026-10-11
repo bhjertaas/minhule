@@ -195,6 +195,10 @@ h2 {
 	object-position: center 75%;
 }
 
+.card-art.town {
+	object-position: center 55%;
+}
+
 .card-body {
 	padding: 1.25rem 1.5rem 1.5rem;
 	display: flex;
@@ -220,6 +224,16 @@ h3 .go {
 
 h3 .stream {
 	color: #c47a12;
+}
+
+h3 .lappen {
+	color: #b03a27;
+}
+
+@media (prefers-color-scheme: dark) {
+	h3 .lappen {
+		color: #ff8a73;
+	}
 }
 
 .button {

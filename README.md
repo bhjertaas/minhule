@@ -4,6 +4,7 @@ The landing page for [minhule.eu](https://minhule.eu): a little cave of apps. Pl
 
 - `index.html`, `style.css`: the page (light and dark colours via `prefers-color-scheme`).
 - `lango/`: `minhule.eu/lango` redirects to [lango.minhule.eu](https://lango.minhule.eu).
+- `surfelappen/`: `minhule.eu/surfelappen` redirects to [surfelappen.minhule.eu](https://surfelappen.minhule.eu). Its card pictures (`images/surfelappen-*.webp`) come from the Surfelappen repository: the town art, and the logo as drawn on its start page.
 - `404.html`: "Lost at sea".
 - `images/`: illustrations made with an image model (gpt-image-2); the lanGo portraits (Lucía, and Alain in the corner) come from the lanGo repository. `scripts/make-image.py <name>` regenerates `images/<name>.webp` from `scripts/prompts/<name>.txt`, using `OPENAI_API_KEY` from `.env` (git-ignored).
 - Visitor counts: [GoatCounter](https://minhule.goatcounter.com), cookieless. Button clicks are counted via `data-goatcounter-click`, and opened tech notes via `data-count` on the `<details>`.
